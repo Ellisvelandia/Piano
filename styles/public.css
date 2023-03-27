@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #aca6a5;
+  --gray-Active: #434343;
+  --light-Gray: #eee;
+  --dark-Gray: rgba(255, 255, 255, 0.2);
+  --light-Black: rgba(0, 0, 0, 0.2);
+}
+body {
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-family: Nunito;
+  min-height: 100vh;
+}
+.piano {
+  background-color: var(--black);
+  height: 17em;
+  padding: 2em;
+  border-radius: 1em;
+}
+.piano h1 {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin: 0 0 1em 0;
+}
+.keys {
+  display: flex;
+}
+.key {
+  position: relative;
+  cursor: pointer;
+}
+.key span {
+  position: absolute;
+  font-size: 1rem;
+  color: var(--gray);
+  width: 100%;
+  bottom: 1em;
+  text-align: center;
+}
+.white-key {
+  width: 4em;
+  height: 15em;
+  background-color: var(--white);
+  background: linear-gradient(var(--white) 96%, var(--light-Gray) 4%);
+  border: 0.15em solid var(--black);
+  border-radius: 0.3em;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+.white-key.active {
+  box-shadow: inset-0.31em 0.31em 1.25em var(--light-Black);
+  background: linear-gradient(
+    to bottom,
+    var(--white) 0%,
+    var(--light-Gray) 100%
+  );
+}
+.black-key {
+  width: 2em;
+  height: 7.5em;
+  background-color: var(--black);
+  border-radius: 0 0 0.3em 0.3em;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin: 0 -1em 0 -1em;
+  z-index: 2;
+}
+.black-key.active {
+  box-shadow: inset -0.31em 0.31em 0.93em var(--dark-Gray);
+  background: linear-gradient(
+    to bottom,
+    var(--black) 0%,
+    var(--gray-Active) 100%
+  );
+}
